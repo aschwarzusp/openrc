@@ -11,6 +11,11 @@
 
 description="Saves the caches OpenRC uses to non volatile storage"
 
+depend()
+{
+	before mount-ro
+}
+
 start()
 {
 	if [ -e "$RC_SVCDIR"/clock-skewed ]; then
